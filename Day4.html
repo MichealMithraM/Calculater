@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+    <link rel="stylesheet" href="Day4.css">
+</head>
+<body>
+    <div class="main">
+    <div class="box">
+
+        
+                <form action="">
+                <label for="n1">Enter the First number: </label><br>
+                    <input type="text" id="n1"><br>
+                <label for="n2">Enter the Second number: </label><br>
+                    <input type="text" id="n2"><br>
+                    <label for="operation">click the oparator button: </label><br>
+                    
+                </form>
+                <button onclick="calculate('+')">+</button>
+                    <button onclick="calculate('-')">-</button>
+                    <button onclick="calculate('*')">*</button>
+                    <button onclick="calculate('/')">/</button>
+                    <div class="ans">
+                <h4 >Result: </h4>
+                <span id="result"></span></div>
+                <!-- <input type="button" value="c" onclick="clr()" />  -->
+                <!-- <button id="clear" onclick="clr()">Clear</button> -->
+            
+    </div>
+</div>
+<script>
+    function calculate(operation){
+       
+    var n1 =parseFloat(document.getElementById("n1").value);
+    var n2 =parseFloat (document.getElementById("n2").value);
+    if(isNaN(n1) || (isNaN(n2))){
+       document.getElementById("result").innerText="Enter the number";
+       return;
+    }
+    var result;
+    switch(operation){
+        case '+' :
+            result= n1 + n2;
+            break;
+
+        case '-':
+            result= n1 - n2;
+            break;
+
+        case '*':
+            result= n1 * n2;
+            break;
+
+        case '/':
+            if(n2 ===0){
+                document.getElementById('result').innerText="Cannot Divided by zero";
+                return;
+            }
+            else{
+                result= n1 / n2;
+                break;
+            }
+            
+        }
+        document.getElementById("result").innerText= result;
+        return;
+    }
+    // function clr() { 
+	// 		document.getElementById("n1")innerText= ""; 
+            
+	// 		document.getElementById("n2")inner= "";
+	// 	} 
+
+</script>
+
+
+</body>
+</html>
